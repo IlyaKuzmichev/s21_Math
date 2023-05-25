@@ -730,7 +730,7 @@ START_TEST(s21_log_infnan) {
 END_TEST
 
 START_TEST(s21_abs_regular) {
-  int testcases[] = {0,     0.000001, -1000001, 999999,  +1999999, 1,
+  double testcases[] = {0,     0.000001, -1000001, 999999,  +1999999, 1,
                      -2,    5,        -50,      150,     -11,      -1001,
                      10001, INT_MAX,  INT_MIN,  1234567, -1234567, -0,
                      0,     00,       +00,      -00};
