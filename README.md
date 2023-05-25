@@ -7,7 +7,7 @@
 
 1. [Information](#information) 
 2. [Task](#task) \
-   2.1. [Part 1](#implementing-the-math-library-functions)
+   2.1. [Part 1](#part-1-implementing-the-math-library-functions)
 3. [Implementation](#implementation) 
 
 ## Information
