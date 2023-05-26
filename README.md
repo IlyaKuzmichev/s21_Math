@@ -7,7 +7,7 @@
 
 1. [Information](#information) 
 2. [Task](#task) \
-   2.1. [Part 1](#part-1-implementing-the-math-library-functions)
+   2.1. [Part 1](#part-1-implementing-the-mathh-library-functions)
 3. [Implementation](#implementation) 
 
 ## Information
@@ -38,7 +38,7 @@ C mathematical operations are a group of functions in the standard library of th
 
 ## Task
 
-## Part 1. Implementing the math library functions
+## Part 1. Implementing the math.h library functions
 
 The functions of the math.h library must be implemented (only those directly described [above](#overview-of-some-mathh-functions)):
 
