@@ -20,13 +20,10 @@ GCOV_FILES=*.gcov
 
 FILES_TO_CHECK=$(SOURCES) $(HEADERS) $(TESTS_SOURCES)
 
-
 .PHONY: test rebuild clean stylecheck fmt
 .SECONDARY: $(OBJECTS)
 
-
 all: s21_math.a
-
 
 %.out: %.o $(OBJECTS)
 	$(CC) $^ -o $@
@@ -63,14 +60,12 @@ rebuild: clean all
 clean: 
 	@rm -rf  $(OBJECTS) $(GCDA_FILES) $(GCNO_FILES) $(GCOV_FILES) 
 	@rm -rf report/ *.a *.out *.info *.o *.txt
-.clang-format:
-	@cp ../materials/linters/.clang-format .
 	
-stylecheck: .clang-format
-	@clang-format -n $(FILES_TO_CHECK)
+stylecheck: 
+	@clang-format -n --style=Google $(FILES_TO_CHECK)
 	
-fmt: .clang-format
-	@clang-format -i $(FILES_TO_CHECK)
+fmt:
+	@clang-format -i --style=Google $(FILES_TO_CHECK)
 
 cppcheck:
 	cppcheck --enable=all --suppress=missingIncludeSystem $(FILES_TO_CHECK)

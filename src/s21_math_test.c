@@ -647,10 +647,7 @@ START_TEST(s21_exp_regular) {
       0,        0.000001,  -0.000001, 1.000001,  -1.000001, 0.999999, -0.999999,
       1.999999, -1.999999, 1,         2,         5,         10,       15,
       1.1,      1.001,     1.0001,    1.00001,   9.999999,  5.454545, 5.4444445,
-      1,        -1,        1.000001,  -1.000001, 1.5,       -1.5,     INT_MIN,
-      //	LLONG_MIN, 12345.123456, -123456789.123456,
-      //	4816.2342, -481516.2342, .0000045, -.0000045, +.0000045
-  };
+      1,        -1,        1.000001,  -1.000001, 1.5,       -1.5,     INT_MIN};
   size_t n = sizeof(testcases) / sizeof(testcases[0]);
 
   for (size_t i = 0; i < n; i++) {
@@ -715,7 +712,6 @@ START_TEST(s21_log_regular) {
     sprintf(result_str, "%16.6Lf", result);
     sprintf(expected_str, "%16.6lf", expected_result);
     ck_assert_ldouble_eq_tol(result, expected_result, 0.000001);
-    // ck_assert_pstr_eq(result_str, expected_str);
   }
 }
 END_TEST
@@ -730,10 +726,9 @@ START_TEST(s21_log_infnan) {
 END_TEST
 
 START_TEST(s21_abs_regular) {
-  int testcases[] = {0, -1000001, 999999,  +1999999, 1,
-                     -2,    5,        -50,      150,     -11,      -1001,
-                     10001, INT_MAX,  INT_MIN,  1234567, -1234567, -0,
-                     0,     00,       +00,      -00};
+  int testcases[] = {
+      0,     -1000001, 999999,  +1999999, 1,        -2, 5, -50, 150, -11, -1001,
+      10001, INT_MAX,  INT_MIN, 1234567,  -1234567, -0, 0, 00,  +00, -00};
   size_t n = sizeof(testcases) / sizeof(testcases[0]);
 
   for (size_t i = 0; i < n; i++) {
@@ -824,7 +819,6 @@ START_TEST(s21_pow_regular) {
       char expected_str[LEN];
       sprintf(result_str, "%16.6Lf", result);
       sprintf(expected_str, "%16.6lf", expected_result);
-      // ck_assert_ldouble_eq_tol(result, expected_result, 0.000001);
       ck_assert_pstr_eq(result_str, expected_str);
     }
   }
